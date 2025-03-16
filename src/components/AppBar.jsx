@@ -9,12 +9,12 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.darkPrimary,
     flexDirection: "row",
     alignItems: "flex-end",
-    flexBasis: "7%",
+    flexBasis: "10%",
   },
   tab: {
     text: {
       color: theme.colors.textPrimaryDark,
-      paddingBottom: "7%",
+      paddingBottom: 10,
       flexGrow: 0,
     },
   },

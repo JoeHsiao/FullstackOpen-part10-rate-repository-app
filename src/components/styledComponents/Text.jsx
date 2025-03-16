@@ -21,15 +21,24 @@ const styles = StyleSheet.create({
   fontWeightBold: {
     fontWeight: theme.fontWeights.bold,
   },
+  toButton: {
+    backgroundColor: theme.colors.primary,
+    borderRadius: 4,
+    overflow: "hidden", // make borderRadius work in ios
+    color: theme.colors.textPrimaryDark,
+    alignSelf: "flex-start",
+    padding: 4,
+  },
 });
 
-const Text = ({ color, fontSize, fontWeight, style, ...props }) => {
+const Text = ({ color, fontSize, fontWeight, toButton, style, ...props }) => {
   const textStyle = [
     styles.text,
     color === "textSecondary" && styles.colorTextSecondary,
     color === "primary" && styles.colorPrimary,
     fontSize === "subheading" && styles.fontSizeSubheading,
     fontWeight === "bold" && styles.fontWeightBold,
+    toButton && styles.toButton,
     style,
   ];
 
