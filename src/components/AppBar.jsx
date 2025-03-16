@@ -1,19 +1,22 @@
 import { View, StyleSheet } from "react-native";
 import Constants from "expo-constants";
 import AppBarTab from "./AppBarTab";
+import theme from "../theme";
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#24292e",
+    backgroundColor: theme.colors.darkPrimary,
     flexDirection: "row",
     alignItems: "flex-end",
     flexBasis: "7%",
   },
   tab: {
-    textColor: "#eeeeee",
-    paddingBottom: "7%",
+    text: {
+      color: theme.colors.textPrimaryDark,
+      paddingBottom: "7%",
+      flexGrow: 0,
+    },
   },
 });
 

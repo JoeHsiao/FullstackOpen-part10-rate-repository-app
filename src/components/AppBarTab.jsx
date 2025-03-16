@@ -1,16 +1,10 @@
-import { Text, Pressable } from "react-native";
+import { Pressable } from "react-native";
+import { Text } from "react-native";
 
 const AppBarTab = ({ style }) => {
   return (
     <Pressable>
-      <Text
-        style={{
-          color: style.textColor,
-          paddingBottom: style.paddingBottom,
-        }}
-      >
-        Repositories
-      </Text>
+      <Text style={style.text}>Repositories</Text>
     </Pressable>
   );
 };
