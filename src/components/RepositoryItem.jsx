@@ -17,7 +17,14 @@ const styles = StyleSheet.create({
 
 const RepositoryItem = ({ item }) => {
   return (
-    <View style={{ ...styles.columnContainer, gap: 10, padding: 10 }}>
+    <View
+      style={{
+        ...styles.columnContainer,
+        gap: 10,
+        padding: 10,
+        backgroundColor: "white",
+      }}
+    >
       <View style={{ ...styles.rowContainer, gap: 20 }}>
         <Image
           source={{ uri: item.ownerAvatarUrl }}

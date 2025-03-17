@@ -1,10 +1,16 @@
 import { Pressable } from "react-native";
-import { Text } from "react-native";
+import { Link } from "react-router-native";
 
-const AppBarTab = ({ style }) => {
+import Text from "./styledComponents/Text";
+
+const AppBarTab = ({ style, label, linkTo }) => {
+  console.log("label", label);
+
   return (
     <Pressable>
-      <Text style={style.text}>Repositories</Text>
+      <Link to={linkTo}>
+        <Text style={style.text}>{label}</Text>
+      </Link>
     </Pressable>
   );
 };

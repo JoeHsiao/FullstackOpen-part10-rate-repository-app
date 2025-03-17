@@ -7,15 +7,18 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: Constants.statusBarHeight,
     backgroundColor: theme.colors.darkPrimary,
-    flexDirection: "row",
-    alignItems: "flex-end",
+    flexDirection: "column-reverse",
     flexBasis: "10%",
+  },
+  tabsContainer: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: 10,
+    margin: 10,
   },
   tab: {
     text: {
       color: theme.colors.textPrimaryDark,
-      paddingBottom: 10,
-      flexGrow: 0,
     },
   },
 });
@@ -23,7 +26,10 @@ const styles = StyleSheet.create({
 const AppBar = () => {
   return (
     <View style={styles.container}>
-      <AppBarTab style={styles.tab} />
+      <View style={styles.tabsContainer}>
+        <AppBarTab style={styles.tab} label="Repositories" linkTo="/" />
+        <AppBarTab style={styles.tab} label="Sign in" linkTo="/signIn" />
+      </View>
     </View>
   );
 };
