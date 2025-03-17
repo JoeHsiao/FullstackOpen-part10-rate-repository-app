@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   tab: {
     text: {
-      color: theme.colors.textPrimaryDark,
+      color: theme.colors.textPrimaryBright,
     },
   },
 });

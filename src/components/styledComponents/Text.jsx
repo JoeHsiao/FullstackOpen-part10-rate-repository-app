@@ -15,6 +15,9 @@ const styles = StyleSheet.create({
   colorPrimary: {
     color: theme.colors.primary,
   },
+  colorPrimaryBright: {
+    color: theme.colors.textPrimaryBright,
+  },
   fontSizeSubheading: {
     fontSize: theme.fontSizes.subheading,
   },
@@ -25,7 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.primary,
     borderRadius: 4,
     overflow: "hidden", // make borderRadius work in ios
-    color: theme.colors.textPrimaryDark,
+    color: theme.colors.textPrimaryBright,
     alignSelf: "flex-start",
     padding: 4,
   },
@@ -36,6 +39,7 @@ const Text = ({ color, fontSize, fontWeight, toButton, style, ...props }) => {
     styles.text,
     color === "textSecondary" && styles.colorTextSecondary,
     color === "primary" && styles.colorPrimary,
+    color === "textPrimaryBright" && styles.colorPrimaryBright,
     fontSize === "subheading" && styles.fontSizeSubheading,
     fontWeight === "bold" && styles.fontWeightBold,
     toButton && styles.toButton,
