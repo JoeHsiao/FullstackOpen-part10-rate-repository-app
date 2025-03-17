@@ -38,7 +38,7 @@ const RepositoryItem = ({ item }) => {
         >
           <Text fontWeight="bold">{item.fullName}</Text>
           <Text color="textSecondary">{item.description}</Text>
-          <Text toButton={true}>{item.language}</Text>
+          <Text toButton>{item.language}</Text>
         </View>
       </View>
       <View style={styles.bottomRow}>
