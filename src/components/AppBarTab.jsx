@@ -4,8 +4,6 @@ import { Link } from "react-router-native";
 import Text from "./styledComponents/Text";
 
 const AppBarTab = ({ style, label, linkTo }) => {
-  console.log("label", label);
-
   return (
     <Pressable>
       <Link to={linkTo}>
