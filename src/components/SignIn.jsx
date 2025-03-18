@@ -4,6 +4,7 @@ import * as yup from "yup";
 
 import Text from "./styledComponents/Text";
 import theme from "../theme";
+import useSignIn from "../hooks/useSignIn";
 
 const styles = StyleSheet.create({
   backgroundContainer: {
@@ -33,6 +34,8 @@ const styles = StyleSheet.create({
 });
 
 const SignIn = () => {
+  const [signIn] = useSignIn();
+
   const initialValues = {
     username: "",
     password: "",
@@ -40,14 +43,20 @@ const SignIn = () => {
 
   const validationSchema = yup.object().shape({
     username: yup.string().required("Username is required"),
-    password: yup
-      .string()
-      .min(5, "Password must be at least 5 characters long")
-      .required("Password is required"),
+    password: yup.string().required("Password is required"),
   });
 
-  const onSubmit = (values) => {
-    console.log(values);
+  const onSubmit = async (values) => {
+    const { username, password } = values;
+
+    try {
+      console.log("username", username);
+      console.log("password", password);
+      const { data } = await signIn({ username, password });
+      console.log("data", data);
+    } catch (e) {
+      console.log("error", e);
+    }
   };
 
   const formik = useFormik({
