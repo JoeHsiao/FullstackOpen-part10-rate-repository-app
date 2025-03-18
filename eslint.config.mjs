@@ -28,6 +28,7 @@ export default defineConfig([{
         globals: {
             ...reactNative.environments["react-native"]["react-native"],
             console: "readonly",
+            fetch: false
         },
 
         parser: babelParser,
