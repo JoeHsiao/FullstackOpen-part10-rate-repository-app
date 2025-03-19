@@ -70,6 +70,7 @@ const SignIn = () => {
     <View style={styles.backgroundContainer}>
       <View style={styles.itemsContainer}>
         <TextInput
+          id="username"
           placeholder="Username"
           placeholderTextColor={theme.colors.mainBackground}
           value={formik.values.username}
@@ -85,6 +86,7 @@ const SignIn = () => {
           <Text color="error">{formik.errors.username}</Text>
         )}
         <TextInput
+          id="password"
           placeholder="Password"
           placeholderTextColor={theme.colors.mainBackground}
           value={formik.values.password}
