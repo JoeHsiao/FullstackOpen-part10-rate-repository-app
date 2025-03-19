@@ -5,6 +5,7 @@ import * as yup from "yup";
 import Text from "./styledComponents/Text";
 import theme from "../theme";
 import useSignIn from "../hooks/useSignIn";
+import { useNavigate } from "react-router-native";
 
 const styles = StyleSheet.create({
   backgroundContainer: {
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
 
 const SignIn = () => {
   const [signIn] = useSignIn();
+  const navigate = useNavigate();
 
   const initialValues = {
     username: "",
@@ -50,10 +52,9 @@ const SignIn = () => {
     const { username, password } = values;
 
     try {
-      console.log("username", username);
-      console.log("password", password);
       const { data } = await signIn({ username, password });
       console.log("data", data);
+      navigate("/");
     } catch (e) {
       console.log("error", e);
     }
